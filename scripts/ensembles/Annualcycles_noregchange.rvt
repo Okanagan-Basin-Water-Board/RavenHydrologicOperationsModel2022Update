@@ -1,0 +1,164 @@
+###################################3
+#Kalwood
+#99th percentile at 08nm065 after 1990
+:ReservoirMaxQDelta 42
+:AnnualCycle 0.265,0.244,0.463,0.607,0.919,0.686,0.339,0.308,0.788,0.1,0.16,0.17 
+:EndReservoirMaxQDelta
+
+#1st percentile at 08nm065 after 1990
+:ReservoirMaxQDecrease 42
+:AnnualCycle 0.17,0.117,0.179,0.596,0.939,0.934,0.39,0.858,0.59,0.218,0.132,0.109 
+:EndReservoirMaxQDecrease
+
+:ReservoirMaxFlow 42 #based on observations after 1990
+#:AnnualCycle 2.52,2.45,2.35,4.127,7.92,8.63,7.31,6.32,3.9,3.08,2.35,2.02  
+:AnnualCycle 2.52,2.45,2.35,4.127,6,6,6,6,3.9,3.08,2.35,2.02  
+:EndReservoirMaxFlow
+
+#min flow on vernon ck is minimum fishery flow of 0.085cms from 2017 ae flood report
+:ReservoirMinFlow 42
+:AnnualCycle 0.085,0.085,0.085,0.085,0.085,0.085,0.085,0.085,0.085,0.085,0.085,0.085
+:EndReservoirMinFlow
+
+#not relevant
+#:ReservoirMinStage 42
+#:AnnualCycle 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2, 391.2
+#:EndReservoirMinStage
+####################################
+
+#######################################
+#Okanagan
+
+#from seismic report, less 0.4 m according to shaun reimer, at this point we start pushing out 100 cms from ok dam
+
+:ReservoirMaxStage 41
+:AnnualCycle 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465, 343.465
+:EndReservoirMaxStage
+
+#from ohcm report, dam sill level, converted to cgvd13, note this is different than 1991 report sill level
+#:ReservoirMinStage 41
+#:AnnualCycle 339.65,339.65,339.65,339.65,339.65,339.65,339.65,339.65,339.65,339.65,339.65,339.65   
+#:EndReservoirMinStage
+
+#99th percentile from dat (08NM050) after 1990
+:ReservoirMaxQDelta 41
+:AnnualCycle 4.4,5.2,7.1,6.1,11.4,11.5,6,4.4,4.3,1.7,1.3,3 
+:EndReservoirMaxQDelta
+
+#1st percentile from data (08NM050) after 1990
+:ReservoirMaxQDecrease 41
+:AnnualCycle 1.7,3.5,5.7,3.2,8.9,8.2,7.4,7.9,8,3.6,2.2,1.6 
+:EndReservoirMaxQDecrease
+
+########################################3
+
+#########################################
+#Skaha
+:ReservoirTargetStage 40
+:AnnualCycle 338.13,338.13,338.13,338.13,338.18,338.23,338.23,338.23,338.18,338.13,338.13,338.13
+:EndReservoirTargetStage
+
+#min from dat (08NM002) can't use this, it makes everything slightly behind, have to rely on ramping from upstream
+#:ReservoirMaxQDelta 40
+#:AnnualCycle 3.3,6.21,5.23,6.18,10.15,8.1,4.35,3.98,2.5,1.7,1.57,1.7 
+#:EndReservoirMaxQDelta
+
+#max from data (08NM002) can't use this, it makes everything slightly behind, have to rely on ramping from upstream
+#:ReservoirMaxQDecrease 40
+#:AnnualCycle 2.1,4.3,4.5,4.96,7.3,8.38,6.2,6.13,5.94,2.62,1.94,1.99
+#:EndReservoirMaxQDecrease
+
+:ReservoirMaxFlow 40 #to help minimize max flows at oliver,
+:AnnualCycle 85,85,85,85,85,85,85,85,85,85,85,85 
+:EndReservoirMaxFlow
+
+#only going so far to slow down oliver flows
+:ReservoirMaxStage 40 
+:AnnualCycle 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48 
+:EndReservoirMaxStage
+
+#sill level
+:ReservoirMinStage 40
+:AnnualCycle 337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85
+:EndReservoirMinStage
+
+:ReservoirMinStageFlow 40 #min flow at 08nm002 1990 and later, re-check if low flows are of more importance
+:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+:EndReservoirMinStageFlow
+###########################################
+
+######################################
+#Vaseux
+#:ReservoirTargetStage 43
+#:AnnualCycle 327.656,327.656,327.656,327.656,327.756,327.856,327.856,327.856,327.756,327.656,327.656,327.656
+#:EndReservoirTargetStage
+
+#should be a relative height
+#not doing this
+#:VariableWeirHeight 43
+#:AnnualCycle 0,0,0,0,0.1,0.20,0.2,0.2,0.1,0,0,0 
+#:EndVariableWeirHeight
+
+:ReservoirMinStage 43
+:AnnualCycle 327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4
+:EndReservoirMinStage
+
+:ReservoirMinStageFlow 43 #same min flow as skaha, recheck if low flows become more important
+:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+:EndReservoirMinStageFlow
+
+###############################################
+
+########################################
+#Swalwell
+#used to keep water coming into Ellison
+#based on 5th percentile of observations
+:ReservoirMinStageFlow 56
+:AnnualCycle 0.057,0.057,0.057,0.057,0.057,0.057,0.057,0.057,0.057,0.057,0.057,0.057 
+:EndReservoirMinStageFlow
+
+#0 flow level from rating curve
+:ReservoirMinStage 56
+:AnnualCycle 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08, 1340.08
+:EndReservoirMinStage
+################################################# 
+
+########################################
+#Osoyoos
+#have potential to do forecast but have not incorporated it
+#datum is converted to CGVD by adding 0.12 to the data
+:ReservoirMinStage 39
+:AnnualCycle 277.22, 277.22, 277.22, 277.52, 277.62, 277.82, 277.82, 277.82, 277.82, 277.62, 277.52, 277.22
+:EndReservoirMinStage
+
+:ReservoirTargetStage 39
+:AnnualCycle 277.92, 277.92, 277.92, 278.02, 278.1, 278.1, 278.1, 278.1, 278.1, 278.02, 277.92, 277.92
+:EndReservoirMaxStage
+
+#1st percentile of flows 08NM127
+:ReservoirMinStageFlow 39
+:AnnualCycle 4.16, 3.32, 1.80, 2.78, 2.68, 2.40, 2.52, 2.74, 2.61, 4.87, 4.16, 3.33 
+:EndReservoirMinStageFlow
+
+#99th percentile ramping from dat (08NM127)
+#:ReservoirMaxQDelta 39
+#:AnnualCycle 3.9, 4, 4, 7.64, 17.69, 14.34, 5.7, 3.95, 4.24, 2.73, 2.69, 2.96
+#:EndReservoirMaxQDelta
+
+#1st percentile ramping from data (08NM127)
+#:ReservoirMaxQDecrease 39
+#:AnnualCycle 2.1, 3.1, 3.8, 4.9, 13.3, 12.3, 7.4, 5.5,, 5.9, 2.7, 3, 2.7
+#:EndReservoirMaxQDecrease
+
+################################################# 
+
+########################################
+#Swan
+:ReservoirMaxStage 63
+:AnnualCycle 389.804, 389.804, 389.804, 389.804, 389.804, 389.804, 389.804, 389.804, 389.804, 389.04, 389.04, 389.04
+:EndReservoirMaxStage
+
+:ReservoirMaxFlow 63
+:AnnualCycle 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+:EndReservoirMaxFlow
+################################################# 

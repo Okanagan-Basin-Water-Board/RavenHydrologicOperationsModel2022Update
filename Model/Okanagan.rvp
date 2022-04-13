@@ -1,0 +1,131 @@
+#########################################################################
+# Raven Parameter File
+# Project Number:		3004430
+# Modeller:				SAG & JWT
+# Model description:	Refining of first model, remove glacier processes, start using realistic parameter values instead of placeholders
+# Model ID:				S1_P1
+# Date created: 		28-Feb-2019 by SAG
+
+#-----------------------------------------------------------------
+# Raven Properties file Template. Created by Raven v2.9 w/ netCDF
+#-----------------------------------------------------------------
+# all expressions of format *xxx* need to be specified by the user
+# all parameter values of format ** need to be specified by the user
+# soil, land use, and vegetation classes should be made consistent with user-generated .rvh file
+#-----------------------------------------------------------------
+
+##See Parameter Ranges.xlsx in Model Setup file
+
+
+#-----------------------------------------------------------------
+# Soil Classes
+#-----------------------------------------------------------------
+:SoilClasses
+  :Attributes     SAND,     CLAY,    ORGANIC
+  :Units,         frac,     frac,    frac
+  TOPSOIL1,           1,        0,        0
+  MIDSOIL1,           1,        0,        0
+  DEEPSOIL1,          1,        0,        0
+  TOPSOIL2,           1,        0,        0
+  MIDSOIL2,           1,        0,        0
+  DEEPSOIL2,          1,        0,        0
+:EndSoilClasses
+
+#-----------------------------------------------------------------
+# Land Use Classes
+#-----------------------------------------------------------------
+:LandUseClasses,
+:Attributes     IMPERM,        FOREST_COVERAGE
+:Units,          fract,        fract
+    GrassShrubs,  0,            0.3
+    Forest,       0,            1
+    MixForest     0,            0.8
+    Lake,         0,            0
+    Urban,      0.9,            0.1
+:EndLandUseClasses
+
+#-----------------------------------------------------------------
+# Vegetation Classes
+#-----------------------------------------------------------------
+:VegetationClasses,
+  :Attributes,        MAX_HT,       MAX_LAI, MAX_LEAF_COND,
+       :Units,             m,          none,      mm_per_s,
+    Forest,               25,             6,            5.3
+    MixForest,            25,             6,            5.3
+    GrassShrubs,           4,             2,            5.3
+    Urban,                 0,             0,            0
+    Lake,                  0,             0,            0
+:EndVegetationClasses
+
+#-----------------------------------------------------------------
+# Soil Profiles
+#-----------------------------------------------------------------
+:SoilProfiles
+         LAKE, 0
+         ROCK, 0
+        COARSE,3,  TOPSOIL1,0.982310,    MIDSOIL1,5,    DEEPSOIL1,20
+        MEDIUM,3,  TOPSOIL2,0.761867,    MIDSOIL2,5,    DEEPSOIL2,20
+:EndSoilProfiles
+
+#-----------------------------------------------------------------
+# Global Parameters
+#-----------------------------------------------------------------
+:GlobalParameter        RAINSNOW_TEMP 1.5
+:GlobalParameter       RAINSNOW_DELTA 1
+:GlobalParameter      ADIABATIC_LAPSE 0
+:GlobalParameter             SNOW_SWI 0.05
+:GlobalParameter       TOC_MULTIPLIER 1
+:GlobalParameter      AVG_ANNUAL_RUNOFF 300
+
+
+#-----------------------------------------------------------------
+# Soil Parameters
+#-----------------------------------------------------------------
+:SoilParameterList
+  :Parameters,             POROSITY,   HBV_BETA,  PET_CORRECTION,    FIELD_CAPACITY,     SAT_WILT,  MAX_CAP_RISE_RATE,     MAX_PERC_RATE, BASEFLOW_COEFF, BASEFLOW_N,
+       :Units,                    -,          -,               -,                 -,            -,               mm/d,              mm/d,            1/d,          -,
+    [DEFAULT],           0.363307,    0.757041,          0.746874,        0.247755,    0.012419,                  0,                 0,              0,           0
+    TOPSOIL1,              _DEFAULT,   _DEFAULT,        _DEFAULT,          _DEFAULT,     _DEFAULT,             8.464540,           NA,             NA,          NA
+    MIDSOIL1,              _DEFAULT,         NA,           		NA,          _DEFAULT,     _DEFAULT,             NA,           8.125526,        0.286166,        0.834311
+    DEEPSOIL1,             _DEFAULT,         NA,          		NA,          _DEFAULT,     _DEFAULT,           _DEFAULT,             		NA,        0.048494,          NA
+
+    TOPSOIL2,         0.327604,2.549687,       1.731349,    0.129014,0.119042,         9.933065,       NA,             NA,          NA
+    MIDSOIL2,         0.327604,        NA,              NA,    0.129014,0.119042,         NA,       9.995924,     0.214443,   0.883195
+    DEEPSOIL2,        0.327604,        NA,              NA,    0.129014,0.119042,           _DEFAULT,                NA,     0.043376,         NA
+:EndSoilParameterList
+
+#-----------------------------------------------------------------
+# Land Use Parameters
+#-----------------------------------------------------------------
+:LandUseParameterList
+  :Parameters,     MELT_FACTOR,    DD_MELT_TEMP, MIN_MELT_FACTOR, HBV_MELT_ASP_CORR, HBV_MELT_FOR_CORR, REFREEZE_FACTOR, FOREST_SPARSENESS, LAKE_PET_CORR,  LAKE_REL_COEFF,      DEP_MAX,
+       :Units,         mm/d/°C,              °C,         mm/d/°C,                 -,                 -,         mm/d/°C,                 -,             -,             1/d,            -,
+    [DEFAULT],     0.905760,       1.348803,      4.623917,         0.255498,                 1,      4.982931,                 0,             1,           0.135,           NA,
+  GrassShrubs,        _DEFAULT,        _DEFAULT,        _DEFAULT,          _DEFAULT,          _DEFAULT,        _DEFAULT,          _DEFAULT,      _DEFAULT,        _DEFAULT,     _DEFAULT,
+    MixForest,      3.479818,        _DEFAULT,        _DEFAULT,          _DEFAULT,          _DEFAULT,        _DEFAULT,          _DEFAULT,      _DEFAULT,        _DEFAULT,     _DEFAULT,
+       Forest,   3.024746,        _DEFAULT,        _DEFAULT,          _DEFAULT,          _DEFAULT,        _DEFAULT,          _DEFAULT,      _DEFAULT,        _DEFAULT,     _DEFAULT,
+:EndLandUseParameterList
+#-----------------------------------------------------------------
+# Vegetation Parameters
+#-----------------------------------------------------------------
+:VegetationParameterList
+  :Parameters,    SAI_HT_RATIO,    RAIN_ICEPT_PCT,    SNOW_ICEPT_PCT,    MAX_CAPACITY, 	MAX_SNOW_CAPACITY,
+       :Units,               -,                 -,                 -,               mm,                mm, # (units not generated by .rvp template)
+    [DEFAULT],              0 ,                 0,                 0,               10,                10,
+    GrassShrubs,      _DEFAULT,  0.240429,  0.238593,  4.435653,   4.195900,
+    MixForest,        _DEFAULT,    0.001649,    0.244607,    7.795023,     11.78260,
+    Forest,           _DEFAULT, 0.001695, 0.000397, 15.02240,  19.32553,
+    Urban,            _DEFAULT,          _DEFAULT,          _DEFAULT,         _DEFAULT,          _DEFAULT,
+:EndVegetationParameterList
+
+:SeasonalRelativeLAI
+  [DEFAULT], 1,1,1,1,1,1,1,1,1,1,1,1
+:EndSeasonalRelativeLAI
+:SeasonalRelativeHeight
+  [DEFAULT], 1,1,1,1,1,1,1,1,1,1,1,1
+:EndSeasonalRelativeHeight
+
+#-----------------------------------------------------------------
+#add redirects as necessary
+#-----------------------------------------------------------------
+:RedirectToFile StreamProfiles.rvp

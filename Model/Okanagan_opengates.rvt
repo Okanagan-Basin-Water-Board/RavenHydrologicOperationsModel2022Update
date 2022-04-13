@@ -1,0 +1,170 @@
+#########################################################################
+# Raven Forcing Data File
+# Project Number:		3004430
+# Modeller:				SAG & JWT
+# Model description:	Refining of first model, remove glacier processes, start using realistic parameter values instead of placeholders
+# Model ID:				S1_P1
+# Date created: 		28-Feb-2019 by SAG
+
+#########################################################################
+:FileType rvt via NetCDF Raven 2.9
+# DataType         Raven Timeseries (rvt)
+:Application       R
+:WrittenBy         Joel Trubilowicz
+:CreationDate  2019-02-23 19:47:00
+#---------------------------------------------------------
+
+#aggregated OK-NORD data
+
+#AE provided okanagan only data
+#:RedirectToFile forcings/Okanagan-daily-precipitation-1950-2017-500m.rvt
+#:RedirectToFile forcings/Okanagan-daily-tasmax-1950-2017-500m.rvt
+#:RedirectToFile forcings/Okanagan-daily-tasmin-1950-2017-500m.rvt
+
+#regular grid version (by NHC) of Okanagan Similkameen
+:RedirectToFile forcings/OkanaganSimilkameen_pr.rvt
+:RedirectToFile forcings/OkanaganSimilkameen_tasmax.rvt
+:RedirectToFile forcings/OkanaganSimilkameen_tasmin.rvt
+
+#AE provided okanagan similkameen
+#:RedirectToFile forcings/pr.rvt
+#:RedirectToFile forcings/tasmax.rvt
+#:RedirectToFile forcings/tasmin.rvt
+
+#Observation data:
+:RedirectToFile obs/OsoyoosLake_Stage.rvt
+:RedirectToFile obs/SkahaLake_Stage.rvt
+:RedirectToFile obs/SkahaLake_Discharge.rvt
+:RedirectToFile obs/OkanaganLake_Stage.rvt
+:RedirectToFile obs/IdealLake_Stage.rvt
+:RedirectToFile obs/EllisonLakeLocal_Stage.rvt
+:RedirectToFile obs/EllisonLakeLocal_Discharge.rvt
+:RedirectToFile obs/WoodandKalamalkaLake_Stage.rvt
+:RedirectToFile obs/VaseuxLake_Stage.rvt
+:RedirectToFile obs/SwanLake_Stage.rvt
+:RedirectToFile obs/DeepCreek_Discharge.rvt
+:RedirectToFile obs/EquesisCreek_Discharge.rvt
+:RedirectToFile obs/WhitemanCreekaboveBouleauCreek_Discharge.rvt
+:RedirectToFile obs/PowersCreek_Discharge.rvt
+:RedirectToFile obs/TrepanierCreek_Discharge.rvt
+:RedirectToFile obs/PeachlandCreek_Discharge.rvt
+:RedirectToFile obs/TroutCreek_Discharge.rvt
+:RedirectToFile obs/ShingleCreek_Discharge.rvt
+:RedirectToFile obs/PentictonCreek_Discharge.rvt
+:RedirectToFile obs/VaseuxCreekaboveSolcoCreek_Discharge.rvt
+:RedirectToFile obs/VaseuxCreek_Discharge.rvt
+:RedirectToFile obs/InkaneepCreek_Discharge.rvt
+:RedirectToFile obs/ColdstreamCreekabovemunicipalintake_Discharge.rvt
+:RedirectToFile obs/BelgoCreekbelowHildaCreek_Discharge.rvt
+:RedirectToFile obs/MissionCreekabovePearsonCreek_Discharge.rvt
+:RedirectToFile obs/MissionCreeknearEastKelowna_Discharge.rvt
+:RedirectToFile obs/ClarkCreeknearWinfield_Discharge.rvt
+:RedirectToFile obs/VernonCreeknearthemouth_Discharge.rvt
+:RedirectToFile obs/OkanoganRiveratOrovilleWA_Discharge.rvt
+:RedirectToFile obs/OkanaganLake_Discharge.rvt
+:RedirectToFile obs/WoodandKalamalkaLake_Discharge.rvt
+:RedirectToFile obs/OkanaganbelowMcIntyreDam_Discharge.rvt
+:RedirectToFile obs/CampCreek_Discharge.rvt
+:RedirectToFile obs/VernonCreekatoutletofSwalwellLake_Discharge.rvt
+:RedirectToFile obs/VernonCreekatoutletofSwalwellLake_Stage.rvt
+:RedirectToFile obs/ShatfordCreek_Discharge.rvt
+:RedirectToFile obs/GreataCreek_Discharge.rvt
+:RedirectToFile obs/SwanLake_Discharge.rvt
+:RedirectToFile obs/BXCreekaboveVernonIntake_Discharge.rvt
+
+:RedirectToFile obs/OyamaLakeLocal_Stage.rvt
+:RedirectToFile obs/OkanaganRivernearOliver_Discharge.rvt
+
+## Redirects to Rule Curves:
+#:RedirectToFile reservoirs/Kalamalka_Reservoir_Targets.rvt
+
+#swan lake, variable weir height
+#:RedirectToFile reservoirs/Swan_VariableWeir.rvt
+#:RedirectToFile reservoirs/Swan_MinQ.rvt
+#:RedirectToFile reservoirs/Swan_Reservoir_Targets.rvt
+#:RedirectToFile reservoirs/Swan_MaxQDelta.rvt
+#:RedirectToFile reservoirs/Swan_MaxQDecrease.rvt
+
+#:RedirectToFile reservoirs/Okanagan_Reservoir_Targets.rvt 
+#:RedirectToFile reservoirs/Okanagan_Reservoir_MinFlow.rvt 
+#:RedirectToFile reservoirs/Okanagan_Reservoir_MaxFlow.rvt 
+
+#:RedirectToFile reservoirs/Osoyoos_MinStage.rvt
+#:RedirectToFile reservoirs/Osoyoos_MaxStage.rvt
+
+#########################################
+#contains annual cycles for most data
+:RedirectToFile reservoirs/Annualcycles.rvt
+################################################
+
+## Overrides for Calibration:
+#:RedirectToFile reservoirs/Overrides/override_swalwell.rvt
+#:RedirectToFile reservoirs/Overrides/override_ellison.rvt
+#:RedirectToFile reservoirs/Overrides/override_KalWood.rvt
+#:RedirectToFile reservoirs/Overrides/override_okanagan.rvt
+#:RedirectToFile reservoirs/Overrides/override_skaha.rvt
+#:RedirectToFile reservoirs/Overrides/override_vaseux.rvt
+
+## Reservoir Inflows
+:RedirectToFile obs/Okanagan_Inflows.rvt
+:RedirectToFile obs/KalWood_Inflows.rvt
+
+##################################################
+#virtual gauges for manual evaporation calculations
+#need virtual gauges for each water body
+
+:Gauge Osoyoos
+  :Latitude 49.01906
+  :Longitude -119.4584
+  :Elevation 278.0625
+  :RedirectToFile resevap/Osoyoos.rvt
+:EndGauge
+
+:Gauge Skaha
+  :Latitude 49.41006
+  :Longitude -119.5854
+  :Elevation 340.3433
+  :RedirectToFile resevap/Skaha.rvt
+:EndGauge
+
+:Gauge Okanagan
+  :Latitude 49.90061
+  :Longitude -119.5471
+  :Elevation 342.8581
+  :RedirectToFile resevap/Okanagan.rvt
+:EndGauge
+
+:Gauge WoodandKalamalka
+  :Latitude 50.14893
+  :Longitude -119.3437
+  :Elevation 392.5518
+  :RedirectToFile resevap/WoodandKalamalka.rvt
+:EndGauge
+
+:Gauge Vaseux
+  :Latitude 49.28815
+  :Longitude -119.5315
+  :Elevation 327.423
+  :RedirectToFile resevap/Vaseux.rvt
+:EndGauge
+
+:Gauge Ellison
+  :Latitude 49.993
+  :Longitude -119.3946
+  :Elevation 425.0371
+  :RedirectToFile resevap/Ellison.rvt
+:EndGauge
+
+:Gauge Swan
+  :Latitude 50.31842
+  :Longitude -119.2561
+  :Elevation 390.0093
+  :RedirectToFile resevap/Swan.rvt
+:EndGauge
+
+:Gauge dummy
+  :Latitude 49.01906
+  :Longitude -119.4584
+  :Elevation 278.0625
+  :RedirectToFile resevap/dummy.rvt
+:EndGauge

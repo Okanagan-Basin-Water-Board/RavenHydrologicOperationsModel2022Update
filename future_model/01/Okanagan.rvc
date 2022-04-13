@@ -1,0 +1,121 @@
+#########################################################################
+# Raven Initial Conditions File
+# Project Number:		3004430
+# Modeller:				SAG & JWT
+# Model description:	Refining of first model, remove glacier processes, start using realistic parameter values instead of placeholders
+# Model ID:				S1_P1
+# Date created: 		28-Feb-2019 by SAG
+
+
+
+#Inital Reservoir Levels (from Lake_info.xls in Model setup file, based on average water levels)
+#:InitialReservoirStage 45 425.2
+#:InitialReservoirStage 32 391.05
+#:InitialReservoirStage 41 341.98
+#:InitialReservoirStage 40 337.89
+#:InitialReservoirStage 43 327.5
+#:InitialReservoirStage 39 275.8
+#:InitialReservoirStage 54 1692
+#:InitialReservoirStage 52 1311
+#:InitialReservoirStage 63 1200 #complete guess, confirm with GIS
+#:InitialReservoirStage 56 1347 #complete guess, based off hru elevation
+
+#Inital Reservoir Levels based only off of crest height estimates for crude model
+#get better crest heights from gis/cad info on drawings
+#:InitialReservoirStage 45 425.0371
+#:InitialReservoirStage 41 342.8581
+#:InitialReservoirStage 40 340.3433
+#:InitialReservoirStage 43 327.3877
+#:InitialReservoirStage 39 278.0625
+#:InitialReservoirStage 54 343.0458
+#:InitialReservoirStage 52 1299.047
+#:InitialReservoirStage 63 390.0093 
+#:InitialReservoirStage 56 1347.031
+#:InitialReservoirStage 42 392.0239
+#:InitialReservoirStage 64 1357.059
+
+#Inital Reservoir Levels based on Oct target levels when available and average WSE for the rest; sometimes crest height if assumed datum is bad
+#get better WSE with datum adjustments
+:InitialReservoirStage 45 425.22
+:InitialReservoirStage 41 342.104 #added cgvd
+:InitialReservoirStage 40 338.13 #added cgvd
+:InitialReservoirStage 43 327.565 #added cgvd
+:InitialReservoirStage 39 278.0625
+:InitialReservoirStage 54 347.47 
+:InitialReservoirStage 52 1299.047
+:InitialReservoirStage 63 389.289 
+:InitialReservoirStage 56 1341
+:InitialReservoirStage 42 391.602 #added cgvd; updated with revised WSP data 
+:InitialReservoirStage 64 1357.5
+
+# Initial basin conditions (average channel flow for each gauge, average of average for non-gauge, from Basin_initial.xls in Model setup file)
+:BasinInitialConditions
+ :Attributes, ID,   Q
+ :Units,      none, m3/s
+1,1.304
+2,1.304
+3,1.304
+4,1.304
+5,1.304
+6,1.304
+7,0.629
+8,1.304
+9,1.304
+10,1.304
+11,1.304
+12,1.103
+13,1.304
+14,1.304
+15,1.304
+16,1.304
+17,1.304
+18,1.304
+19,1.304
+20,1.304
+21,0.906
+22,0.985
+23,0.363
+24,1.304
+25,1.304
+26,0.539
+27,3.247
+28,1.304
+29,6.548
+30,1.304
+31,0.075
+32,1.304
+33,1.482
+34,1.304
+35,1.304
+36,1.304
+37,1.304
+38,1.304
+39,1.304
+40,1.304
+41,5
+42,0.856
+43,1.304
+44,1.304
+45,1.304
+46,1.304
+47,1.304
+48,1.304
+49,1.304
+#50,20.724
+51,1.304
+52,1.304
+53,1.304
+54,1.304
+55,0.146
+56,1.304
+57,1.304
+58,0.078
+60,1.304
+61,1.304
+62,1.304
+63,1.304
+64,1.304
+65,1.304
+:EndBasinInitialConditions
+
+

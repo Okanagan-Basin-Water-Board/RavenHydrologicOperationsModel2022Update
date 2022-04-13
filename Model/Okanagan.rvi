@@ -1,0 +1,158 @@
+#########################################################################
+# Raven Input File
+# Project Number:		3004430
+# Modeller:				SAG & JWT
+# Model description:	Adding Rule Curves
+# Date created: 		28-Mar-2019 by SAG
+
+#------------------------------------------------------------------------
+# Simulation details
+#------------------------------------------------------------------------
+
+#Full Model Run
+:StartDate 1945-01-01 00:00:00
+:Duration 24837
+:TimeStep 1.0
+
+#Manual Calibration
+#:StartDate 1968-10-01 00:00:00
+#:Duration 5475
+#:TimeStep 1.0
+
+#Manual Calibration - Small Reservoirs
+#:StartDate 1970-10-01 00:00:00
+#:Duration 1500
+#:TimeStep 1.0
+
+#Ostrich Calibration
+#:StartDate 1990-10-01 00:00:00
+#:Duration 7300 
+#:TimeStep 1.0
+
+#Validation Calibration
+#:StartDate 2014-10-01 00:00:00
+#:Duration 1095 
+#:TimeStep 1.0
+
+#:Calendar 365_DAY 
+
+#------------------------------------------------------------------------
+# Model options
+#------------------------------------------------------------------------
+:Method 				ORDERED_SERIES
+:Interpolation 			INTERP_FROM_FILE GaugeWeights.txt
+
+# -------------
+:Routing 				ROUTE_PLUG_FLOW
+:CatchmentRoute 		TRIANGULAR_UH
+# -------------
+
+# -------------
+:Evaporation            PET_HARGREAVES_1985
+:OW_Evaporation         PET_DATA PET_HARGREAVES_1985
+:SWCloudCorrect 		SW_CLOUD_CORR_NONE
+:SWCanopyCorrect 		SW_CANOPY_CORR_NONE
+:SWRadiationMethod 		SW_RAD_DEFAULT
+:LWRadiationMethod 		LW_RAD_DEFAULT
+# -------------
+
+# -------------
+:RainSnowFraction 		RAINSNOW_HBV
+:PotentialMeltMethod 	POTMELT_HBV
+# -------------
+
+# -------------
+#data is read directly from the grid, no orographic corrections needed
+:OroTempCorrect 		OROCORR_NONE
+:OroPrecipCorrect 		OROCORR_NONE
+:OroPETCorrect 			OROCORR_NONE
+# -------------
+
+# -------------
+:CloudCoverMethod 		CLOUDCOV_NONE
+:PrecipIceptFract 		PRECIP_ICEPT_USER
+# -------------
+
+#for reservoir rules
+:MonthlyInterpolationMethod MONTHINT_UNIFORM
+
+# -------------
+:SoilModel SOIL_MULTILAYER 3
+# -------------
+
+:DefineHRUGroups Calibration SnowData M_reservoirs Opensites Watersites Osoyoos Skaha Okanagan Vaseux WoodandKalamalka Ellison Swan
+:DefineHRUGroups 2F08P 2F18P 2F05P 2F10P 2F19 2F11 2F12 2F10 2F08 2F18 2F05 MSW0
+
+#------------------------------------------------------------------------
+# Hydrologic process order for HBV-EC Emulation
+#------------------------------------------------------------------------
+
+# an oddity unique to HBV:
+:LakeStorage LAKE_STORAGE 
+
+:HydrologicProcesses
+	:SnowRefreeze 		FREEZE_DEGREE_DAY 		SNOW_LIQ 		SNOW
+	:Precipitation 		PRECIP_RAVEN 			ATMOS_PRECIP 	MULTIPLE
+	:CanopyEvaporation 	CANEVP_ALL 				CANOPY 			ATMOSPHERE
+	:CanopySnowEvap 	CANEVP_ALL 				CANOPY_SNOW 	ATMOSPHERE
+	:SnowBalance 		SNOBAL_SIMPLE_MELT 		SNOW 			SNOW_LIQ
+		:-->Overflow 	RAVEN_DEFAULT 			SNOW_LIQ 		PONDED_WATER
+	:Infiltration 		INF_HBV 				PONDED_WATER 	MULTIPLE
+	:Flush 				RAVEN_DEFAULT 			SURFACE_WATER 	SOIL[1]
+	:SoilEvaporation 	SOILEVAP_HBV 			SOIL[0] 		ATMOSPHERE
+	:CapillaryRise 		RISE_HBV 				SOIL[1] 		SOIL[0]
+	:LakeEvaporation	LAKE_EVAP_BASIC  		LAKE_STORAGE	ATMOSPHERE    #non hbv
+	:LakeRelease		LAKEREL_LINEAR			LAKE_STORAGE	SURFACE_WATER #non hbv
+	:Percolation 		PERC_CONSTANT 			SOIL[1] 	    SOIL[2]
+	:Baseflow 			BASE_POWER_LAW 			SOIL[1] 	    SURFACE_WATER
+	:Baseflow 			BASE_LINEAR 			SOIL[2] 	    SURFACE_WATER
+:EndHydrologicProcesses
+
+#to turn off non calibration basins
+#:DisableHRUGroup Calibration
+
+#------------------------------------------------------------------------
+# Output Options
+#------------------------------------------------------------------------
+:EvaluationMetrics RMSE NASH_SUTCLIFFE PCT_BIAS KLING_GUPTA
+
+## For Forecast:
+:CustomOutput DAILY AVERAGE SNOW BY_HRU_GROUP
+:CustomOutput DAILY AVERAGE PRECIP BY_HRU_GROUP
+
+
+## For Evaporation calcs
+#:CustomOutput DAILY AVERAGE TEMP_AVE BY_HRU_GROUP
+
+## For Figures in R Scripts:
+#:CustomOutput DAILY AVERAGE To:ATMOSPHERE ENTIRE_WATERSHED
+#:CustomOutput DAILY AVERAGE To:ATMOSPHERE BY_HRU_GROUP
+#:CustomOutput DAILY AVERAGE To:ATMOSPHERE BY_BASIN
+#:CustomOutput DAILY AVERAGE To:ATMOSPHERE BY_HRU
+
+# for local flow calculations (to hydraulic model) 
+:CustomOutput DAILY AVERAGE From:SURFACE_WATER BY_BASIN
+:CustomOutput DAILY AVERAGE To:SURFACE_WATER BY_BASIN
+
+# for predicting similkameen flow
+#:CustomOutput MONTHLY AVERAGE TEMP_MAX BY_BASIN
+
+#diagnostics
+#:WriteForcingFunctions
+:WriteReservoirMBFile
+#:WriteMassBalanceFile
+#:CustomOutput DAILY AVERAGE PRECIP BY_HRU
+#:CustomOutput DAILY AVERAGE PRECIP BY_BASIN
+#:CustomOutput DAILY AVERAGE SNOW BY_BASIN
+#:CustomOutput DAILY AVERAGE SOIL[0] ENTIRE_WATERSHED
+#:CustomOutput DAILY AVERAGE SOIL[1] ENTIRE_WATERSHED
+#:CustomOutput DAILY AVERAGE SOIL[2] ENTIRE_WATERSHED 
+#:CustomOutput DAILY AVERAGE SOIL[0] BY_HRU
+#:CustomOutput DAILY AVERAGE SOIL[1] BY_HRU
+#:CustomOutput DAILY AVERAGE SOIL[2] BY_HRU
+
+
+#:CreateRVPTemplate
+#:NoisyMode
+#:SilentMode
+#:SuppressOutput
