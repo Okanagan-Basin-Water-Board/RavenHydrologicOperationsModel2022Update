@@ -1,1 +1,0 @@
-ERROR : A model input file name must be supplied as an argument to the Raven executable.
