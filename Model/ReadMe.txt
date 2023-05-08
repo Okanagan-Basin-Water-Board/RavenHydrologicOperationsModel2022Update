@@ -2,12 +2,9 @@
 #--------------------------------------------------------------------------
 
 #ABSTRACT:
-This model was developed for the OBWB by NHC to support floodplain mapping completed in 2020 (NHC, 2020).
-The model covers the mainstem of the Okanagan River and it's tributaries including current operations. 
-The model structure is a modified HBV-EC model. The model was calibrated for peak flows. Additional detail on calibration can be found in the Chapter 3 of the supporting report (NHC, 2020). 
-The model can be run in two different modes: 
-1. Standard regulation scenario - the regular mode considers current regulation on the mainstem 
-2. Open gate scenario - simulates the gates of Okanagan and Skaha Lake dam as fully open with resservoir outflow dictated by rating curves. The rvt file for the open gates scenario is named Okanagan_opengates.rvt
+This model is an update of the original Okanagan mainstem operations model developed by NHC in 2020 to support floodplain mapping (NHC, 2020).
+The model has been updated to run on Version 3.5 of Raven. 
+The model now includes withdrawls as well as recalibration to better support low flow operations (not only peak flow operations) downstream of Lake Okanagan. 
 
 #ORGANIZATION:
 The model was developed by Northwest Hydraulic Consultants Ltd.
@@ -17,10 +14,11 @@ Genevieve Brown - gbrown@nhcweb.com
 Piotr Kuras - pkuras@nhcweb.com
 
 #DATE:
-March 2020
+November 2022
 
 #MODEL EXECUTABLE:
-The model was developed to run on Raven v2.9.2
+The model was developed to run on Raven v3.5. The model runs on v3.6 as well but no checks were performed to ensure outputs have not changed. The user is cautioned to make these checks themselves prior to using 
+newer executables. 
 
 #SPATIAL COVERAGE:
 The model includes 64 subbasins that cover the mainstem of the Okanagan River, ending at Osoyoos Lake
@@ -32,5 +30,9 @@ The model can run on historical climate data from 1945-2012 (see climate data) a
 Netcdf files for precipitation, minimum and maximum temperature can be found here:
 
 #RESOURCES:
+Model Update: 
+NHC (2022). Okanagan Raven Hydrologic Model Updates. Draft Report. Prepared for Okanagan Basin Water Board. 
+
+Original Model:
 NHC (2020). Okanagan Mainstem Floodplain Mapping. Prepared for Okanagan Basin Water Board. 
-Final Report Downloadable at: https://www.obwb.ca/flood/
+Final Report Downloadable at: https://www.obwb.ca/docs/2020-okanagan-floodplain-mapping-nhc-finalreport-lowres.pdf

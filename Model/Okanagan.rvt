@@ -6,17 +6,38 @@
 # Model ID:				S1_P1
 # Date created: 		28-Feb-2019 by SAG
 
+
 #########################################################################
-:FileType rvt via NetCDF Raven 2.9
+:FileType rvt via NetCDF Raven 3.5
 # DataType         Raven Timeseries (rvt)
-#:Application       R
-#:WrittenBy         Joel Trubilowicz
-#:CreationDate  2019-02-23 19:47:00
+:Application       R
+:WrittenBy         Joel Trubilowicz
+:CreationDate  2019-02-23 19:47:00
 #---------------------------------------------------------
+##########################################################################
+#Edited: LMPB      09-Jun-2022
+
+#aggregated OK-NORD data
+
+#AE provided okanagan only data
+#:RedirectToFile forcings/Okanagan-daily-precipitation-1950-2017-500m.rvt
+#:RedirectToFile forcings/Okanagan-daily-tasmax-1950-2017-500m.rvt
+#:RedirectToFile forcings/Okanagan-daily-tasmin-1950-2017-500m.rvt
+
 #regular grid version (by NHC) of Okanagan Similkameen
-:RedirectToFile forcings/OkanaganSimilkameen_pr.rvt
-:RedirectToFile forcings/OkanaganSimilkameen_tasmax.rvt
-:RedirectToFile forcings/OkanaganSimilkameen_tasmin.rvt
+#:RedirectToFile forcings/OkanaganSimilkameen_pr.rvt
+#:RedirectToFile forcings/OkanaganSimilkameen_tasmax.rvt
+#:RedirectToFile forcings/OkanaganSimilkameen_tasmin.rvt
+
+#PNWNAMet PCIC coarse climate data
+:RedirectToFile forcings/GriddedPNWNA_pr.rvt
+:RedirectToFile forcings/GriddedPNWNA_tasmax.rvt
+:RedirectToFile forcings/GriddedPNWNA_tasmin.rvt
+
+#AE provided okanagan similkameen
+#:RedirectToFile forcings/pr.rvt
+#:RedirectToFile forcings/tasmax.rvt
+#:RedirectToFile forcings/tasmin.rvt
 
 #Observation data:
 :RedirectToFile obs/OsoyoosLake_Stage.rvt
@@ -62,6 +83,126 @@
 :RedirectToFile obs/OyamaLakeLocal_Stage.rvt
 :RedirectToFile obs/OkanaganRivernearOliver_Discharge.rvt
 
+#Surface Water Demand
+:RedirectToFile withdrawal/demand/1_water_demand.rvt
+:RedirectToFile withdrawal/demand/2_water_demand.rvt
+:RedirectToFile withdrawal/demand/3_water_demand.rvt
+:RedirectToFile withdrawal/demand/4_water_demand.rvt
+:RedirectToFile withdrawal/demand/5_water_demand.rvt
+:RedirectToFile withdrawal/demand/6_water_demand.rvt
+:RedirectToFile withdrawal/demand/8_water_demand.rvt
+:RedirectToFile withdrawal/demand/9_water_demand.rvt
+:RedirectToFile withdrawal/demand/10_water_demand.rvt
+:RedirectToFile withdrawal/demand/11_water_demand.rvt
+:RedirectToFile withdrawal/demand/12_water_demand.rvt
+:RedirectToFile withdrawal/demand/13_water_demand.rvt
+:RedirectToFile withdrawal/demand/14_water_demand.rvt
+:RedirectToFile withdrawal/demand/15_water_demand.rvt
+:RedirectToFile withdrawal/demand/16_water_demand.rvt
+:RedirectToFile withdrawal/demand/17_water_demand.rvt
+:RedirectToFile withdrawal/demand/18_water_demand.rvt
+:RedirectToFile withdrawal/demand/19_water_demand.rvt
+:RedirectToFile withdrawal/demand/20_water_demand.rvt
+:RedirectToFile withdrawal/demand/22_water_demand.rvt
+:RedirectToFile withdrawal/demand/23_water_demand.rvt
+:RedirectToFile withdrawal/demand/24_water_demand.rvt
+:RedirectToFile withdrawal/demand/28_water_demand.rvt
+:RedirectToFile withdrawal/demand/29_water_demand.rvt
+:RedirectToFile withdrawal/demand/30_water_demand.rvt
+:RedirectToFile withdrawal/demand/32_water_demand.rvt
+:RedirectToFile withdrawal/demand/33_water_demand.rvt
+:RedirectToFile withdrawal/demand/34_water_demand.rvt
+:RedirectToFile withdrawal/demand/35_water_demand.rvt
+:RedirectToFile withdrawal/demand/36_water_demand.rvt
+:RedirectToFile withdrawal/demand/37_water_demand.rvt
+:RedirectToFile withdrawal/demand/39_water_demand.rvt
+:RedirectToFile withdrawal/demand/40_water_demand.rvt
+:RedirectToFile withdrawal/demand/41_water_demand.rvt
+:RedirectToFile withdrawal/demand/42_water_demand.rvt
+:RedirectToFile withdrawal/demand/43_water_demand.rvt
+:RedirectToFile withdrawal/demand/44_water_demand.rvt
+:RedirectToFile withdrawal/demand/45_water_demand.rvt
+:RedirectToFile withdrawal/demand/46_water_demand.rvt
+:RedirectToFile withdrawal/demand/47_water_demand.rvt
+:RedirectToFile withdrawal/demand/48_water_demand.rvt
+:RedirectToFile withdrawal/demand/49_water_demand.rvt
+:RedirectToFile withdrawal/demand/51_water_demand.rvt
+:RedirectToFile withdrawal/demand/53_water_demand.rvt
+:RedirectToFile withdrawal/demand/54_water_demand.rvt
+:RedirectToFile withdrawal/demand/57_water_demand.rvt
+:RedirectToFile withdrawal/demand/60_water_demand.rvt
+:RedirectToFile withdrawal/demand/61_water_demand.rvt
+:RedirectToFile withdrawal/demand/63_water_demand.rvt
+:RedirectToFile withdrawal/demand/65_water_demand.rvt
+:RedirectToFile withdrawal/demand/66_water_demand.rvt
+:RedirectToFile withdrawal/demand/67_water_demand.rvt
+
+#Storage Release
+:RedirectToFile withdrawal/storage_release/1_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/2_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/3_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/4_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/5_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/6_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/7_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/8_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/9_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/10_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/11_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/12_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/13_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/14_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/15_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/16_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/17_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/18_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/19_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/20_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/21_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/22_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/23_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/24_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/25_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/26_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/27_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/28_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/29_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/30_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/31_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/32_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/33_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/34_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/35_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/36_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/37_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/38_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/39_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/40_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/41_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/42_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/43_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/44_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/45_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/46_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/47_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/48_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/49_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/51_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/52_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/53_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/54_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/55_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/56_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/57_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/58_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/60_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/61_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/62_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/63_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/64_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/65_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/66_storage_release.rvt
+:RedirectToFile withdrawal/storage_release/67_storage_release.rvt
 ## Redirects to Rule Curves:
 :RedirectToFile reservoirs/Kalamalka_Reservoir_Targets.rvt
 

@@ -2,7 +2,7 @@
 # Raven Input File
 # Project Number:		3004430
 # Modeller:				SAG & JWT
-# Model description:	Okanagan MainStem Model 
+# Model description:	Adding Rule Curves
 # Date created: 		28-Mar-2019 by SAG
 
 #------------------------------------------------------------------------
@@ -10,8 +10,8 @@
 #------------------------------------------------------------------------
 
 #Full Model Run
-:StartDate 1945-01-01 00:00:00
-:Duration 24837
+:StartDate 1945-10-01 00:00:00
+:Duration 24537
 :TimeStep 1.0
 
 #:Calendar 365_DAY 
@@ -94,11 +94,13 @@
 #------------------------------------------------------------------------
 # Output Options
 #------------------------------------------------------------------------
-:EvaluationMetrics RMSE NASH_SUTCLIFFE PCT_BIAS KLING_GUPTA
+#diagnostics
+#:EvaluationMetrics RMSE NASH_SUTCLIFFE LOG_NASH PCT_BIAS KLING_GUPTA
 
 ## For Forecast:
-:CustomOutput DAILY AVERAGE SNOW BY_HRU_GROUP
-:CustomOutput DAILY AVERAGE PRECIP BY_HRU_GROUP
+#:CustomOutput DAILY AVERAGE SNOW BY_HRU_GROUP
+#:CustomOutput DAILY AVERAGE PRECIP BY_HRU_GROUP
+
 
 ## For Evaporation calcs
 #:CustomOutput DAILY AVERAGE TEMP_AVE BY_HRU_GROUP
@@ -118,9 +120,11 @@
 
 #diagnostics
 #:WriteForcingFunctions
-#:WriteReservoirMBFile
+:WriteReservoirMBFile
 #:WriteMassBalanceFile
-#:CustomOutput DAILY AVERAGE PRECIP BY_HRU
+
+:CustomOutput DAILY AVERAGE PRECIP BY_HRU
+:CustomOutput DAILY AVERAGE TEMPAVE BY_HRU
 #:CustomOutput DAILY AVERAGE PRECIP BY_BASIN
 #:CustomOutput DAILY AVERAGE SNOW BY_BASIN
 #:CustomOutput DAILY AVERAGE SOIL[0] ENTIRE_WATERSHED

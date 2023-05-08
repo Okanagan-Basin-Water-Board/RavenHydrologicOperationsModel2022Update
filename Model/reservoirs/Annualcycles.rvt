@@ -1,14 +1,14 @@
 ###################################3
 #Kalwood
 #99th percentile at 08nm065 after 1990
-:ReservoirMaxQDelta 42
-:AnnualCycle 0.265,0.244,0.463,0.607,0.919,0.686,0.339,0.308,0.788,0.1,0.16,0.17 
-:EndReservoirMaxQDelta
+# :ReservoirMaxQDelta 42
+# :AnnualCycle 0.265,0.244,0.463,0.607,0.919,0.686,0.339,0.308,0.788,0.1,0.16,0.17 
+# :EndReservoirMaxQDelta
 
-#1st percentile at 08nm065 after 1990
-:ReservoirMaxQDecrease 42
-:AnnualCycle 0.17,0.117,0.179,0.596,0.939,0.934,0.39,0.858,0.59,0.218,0.132,0.109 
-:EndReservoirMaxQDecrease
+# #1st percentile at 08nm065 after 1990
+# :ReservoirMaxQDecrease 42
+# :AnnualCycle 0.17,0.117,0.179,0.596,0.939,0.934,0.39,0.858,0.59,0.218,0.132,0.109 
+# :EndReservoirMaxQDecrease
 
 :ReservoirMaxFlow 42 #based on observations after 1990
 #:AnnualCycle 2.52,2.45,2.35,4.127,7.92,8.63,7.31,6.32,3.9,3.08,2.35,2.02
@@ -48,12 +48,13 @@
 
 #########################################
 #Skaha
+#ORIGINAL TARGETS
 :ReservoirTargetStage 40
 :AnnualCycle 338.13,338.13,338.13,338.13,338.18,338.23,338.23,338.23,338.18,338.13,338.13,338.13
 :EndReservoirTargetStage
 
 :ReservoirMaxFlow 40 #to help minimize max flows at oliver,
-:AnnualCycle 85,85,85,85,85,85,85,85,85,85,85,85 
+:AnnualCycle 85,85,85,20.3,85,85,85,28.3,28.3,14.6,85,85 
 :EndReservoirMaxFlow
 
 #only going so far to slow down oliver flows
@@ -66,24 +67,112 @@
 :AnnualCycle 337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85
 :EndReservoirMinStage
 
-:ReservoirMinStageFlow 40 #min flow at 08nm002 1990 and later, re-check if low flows are of more importance
-:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
-:EndReservoirMinStageFlow
+:ReservoirMinFlow 40 #min flow at 08nm002 1990 and later, re-check if low flows are of more importance
+:AnnualCycle 4.4,4.4,4.5,4,2.5,4.85,5.85,10.0,9.25,9.2,4.25,4.4
+:EndReservoirMinFlow
+
+#:ReservoirMaxQDelta 40
+#:AnnualCycle 3.3, 6.2, 5.2, 6.2, 10.1, 8.1, 4.4, 4.0, 2.5,1.7, 1.6, 1.7
+#:EndReservoirMaxQDelta
+
+#:ReservoirMaxQDecrease 40
+#:AnnualCycle 2.1,4.3,4.5,5.0,7.3,8.4,6.2,6.1,5.9,2.6,1.9,2.0
+#:EndReservoirMaxQDecrease
+
+
+#only going so far to slow down oliver flows - max stage has highest priority in Raven
+#:ReservoirMaxStage 40 
+#:AnnualCycle 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48, 338.48 
+#:EndReservoirMaxStage
+
+#:ReservoirMinFlow 40 # Based on monthly mins from WSC 08NM002 from 2012 to present
+#:AnnualCycle 4.63, 4.64, 4.90, 3.77, 3.44, 4.77, 7.54, 10.6, 9.1, 9.3, 4.43, 4.67
+#:EndReservoirMinFlow
+
+#:ReservoirMaxFlow 40 #to help minimize max flows at oliver,
+#:AnnualCycle 28.3,28.3,28.3,20.3,85,85,85,28.3,28.3,15.6,28.3,28.3
+#:EndReservoirMaxFlow
+
+#sill level
+#:ReservoirMinStage 40
+#:AnnualCycle 337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85,337.85
+#:EndReservoirMinStage
+
+#:ReservoirMinStageFlow 40 # Based on monthly mins from WSC 08NM002 from 2012 to present
+#:AnnualCycle 4.63, 4.64, 4.90, 3.77, 3.44, 4.77, 7.54, 10.6, 9.1, 9.3, 4.43, 4.67
+#:EndReservoirMinStageFlow
+
+#:ReservoirTargetStage 40
+#:AnnualCycle 338.13,338.13,338.13,338.13,338.18,338.23,338.23,338.23,338.18,338.13,338.13,338.13
+#:EndReservoirTargetStage
+
+#:ReservoirMinStageFlow 40 #min flow at 08nm002 1990 and later, re-check if low flows are of more importance
+#:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+#:EndReservoirMinStageFlow
 ###########################################
 
 ######################################
 #Vaseux
-#:ReservoirTargetStage 43
-#:AnnualCycle 327.656,327.656,327.656,327.656,327.756,327.856,327.856,327.856,327.756,327.656,327.656,327.656
-#:EndReservoirTargetStage
+#ORIGINAL TARGETS
+:ReservoirTargetStage 43
+:AnnualCycle 327.656,327.656,327.656,327.656,327.756,327.856,327.856,327.856,327.756,327.656,327.656,327.656
+:EndReservoirTargetStage
 
-:ReservoirMinStage 43
-:AnnualCycle 327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4
+:ReservoirMaxStage 43 
+:AnnualCycle 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3, 328.3
+:EndReservoirMaxStage
+
+:ReservoirMinStage 43 
+:AnnualCycle 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3, 327.3
 :EndReservoirMinStage
 
-:ReservoirMinStageFlow 43 #same min flow as skaha, recheck if low flows become more important
-:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+:ReservoirMinStageFlow 43 
+:AnnualCycle 0,0,0,0,0,0,0,0,0,0,0,0
 :EndReservoirMinStageFlow
+
+:ReservoirMinFlow 43 # Based on monthly mins from WSC 08NM002 from 2012 to present
+:AnnualCycle 4.6,4.6,4.65,4.0,2.5,5.5,6.5,10.0,9.25,9.4,4.5,4.6
+:EndReservoirMinFlow
+
+:ReservoirMaxFlow 43 #to help minimize max flows at oliver,
+:AnnualCycle 85,85,85,28.3,85,85,85,28.3,28.3,14.6,85,85 
+:EndReservoirMaxFlow
+
+#:ReservoirMinStage 43
+#:AnnualCycle 327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4
+#:EndReservoirMinStage
+
+##:ReservoirMinStageFlow 43 #same min flow as skaha, recheck if low flows become more important
+#:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+#:EndReservoirMinStageFlow
+
+
+
+# :ReservoirTargetStage 43
+# :AnnualCycle 327.656,327.656,327.656,327.656,327.756,327.856,327.856,327.856,327.756,327.656,327.656,327.656
+# :EndReservoirTargetStage
+
+# :ReservoirMaxFlow 43 #to help minimize max flows at oliver,
+# :AnnualCycle 28.3,28.3,28.3,20.3,85,85,85,28.3,28.3,15.6,28.3,28.3 
+# :EndReservoirMaxFlow
+
+# :ReservoirMinFlow 43 # Based on monthly mins from WSC 08NM002 from 2012 to present
+# :AnnualCycle 4.63, 4.64, 4.90, 3.77, 3.44, 4.77, 7.54, 10.6, 9.1, 9.3, 4.43, 4.67
+# :EndReservoirMinFlow
+
+# :ReservoirMaxStage 43
+# :AnnualCycle 328.4,328.4,328.4,328.4,328.4,328.4,328.4,328.4,328.4,328.4,328.4,328.4
+# :EndReservoirMinStage
+
+# :ReservoirMinStage 43
+# :AnnualCycle 327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4,327.4
+# :EndReservoirMinStage
+
+
+
+#:ReservoirMinStageFlow 43 #same min flow as skaha, recheck if low flows become more important
+#:AnnualCycle 3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21,3.21
+#:EndReservoirMinStageFlow
 
 ###############################################
 

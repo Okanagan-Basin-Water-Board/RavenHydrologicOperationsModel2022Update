@@ -141,7 +141,7 @@
 :Reservoir SkahaLake	
 :SubBasinID 40			
 :HRUID 469			
-:Type RESROUTE_STANDARD			
+:Type RESROUTE_STANDARD		
 :StageRelations			
 46	# number of points		
 #stage(m)	 flow(m3/s)	 vol(m3)	 area(m2)

@@ -7,6 +7,33 @@
 # Date created: 		28-Feb-2019 by SAG
 
 
+
+#Inital Reservoir Levels (from Lake_info.xls in Model setup file, based on average water levels)
+#:InitialReservoirStage 45 425.2
+#:InitialReservoirStage 32 391.05
+#:InitialReservoirStage 41 341.98
+#:InitialReservoirStage 40 337.89
+#:InitialReservoirStage 43 327.5
+#:InitialReservoirStage 39 275.8
+#:InitialReservoirStage 54 1692
+#:InitialReservoirStage 52 1311
+#:InitialReservoirStage 63 1200 #complete guess, confirm with GIS
+#:InitialReservoirStage 56 1347 #complete guess, based off hru elevation
+
+#Inital Reservoir Levels based only off of crest height estimates for crude model
+#get better crest heights from gis/cad info on drawings
+#:InitialReservoirStage 45 425.0371
+#:InitialReservoirStage 41 342.8581
+#:InitialReservoirStage 40 340.3433
+#:InitialReservoirStage 43 327.3877
+#:InitialReservoirStage 39 278.0625
+#:InitialReservoirStage 54 343.0458
+#:InitialReservoirStage 52 1299.047
+#:InitialReservoirStage 63 390.0093 
+#:InitialReservoirStage 56 1347.031
+#:InitialReservoirStage 42 392.0239
+#:InitialReservoirStage 64 1357.059
+
 #Inital Reservoir Levels based on Oct target levels when available and average WSE for the rest; sometimes crest height if assumed datum is bad
 #get better WSE with datum adjustments
 :InitialReservoirStage 45 425.22
