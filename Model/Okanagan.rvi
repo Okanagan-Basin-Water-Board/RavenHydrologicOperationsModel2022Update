@@ -2,7 +2,7 @@
 # Raven Input File
 # Project Number:		3004430
 # Modeller:				SAG & JWT
-# Model description:	Adding Rule Curves
+# Model description:	Okanagan MainStem Model 
 # Date created: 		28-Mar-2019 by SAG
 
 #------------------------------------------------------------------------
@@ -13,26 +13,6 @@
 :StartDate 1945-01-01 00:00:00
 :Duration 24837
 :TimeStep 1.0
-
-#Manual Calibration
-#:StartDate 1968-10-01 00:00:00
-#:Duration 5475
-#:TimeStep 1.0
-
-#Manual Calibration - Small Reservoirs
-#:StartDate 1970-10-01 00:00:00
-#:Duration 1500
-#:TimeStep 1.0
-
-#Ostrich Calibration
-#:StartDate 1990-10-01 00:00:00
-#:Duration 7300 
-#:TimeStep 1.0
-
-#Validation Calibration
-#:StartDate 2014-10-01 00:00:00
-#:Duration 1095 
-#:TimeStep 1.0
 
 #:Calendar 365_DAY 
 
@@ -120,7 +100,6 @@
 :CustomOutput DAILY AVERAGE SNOW BY_HRU_GROUP
 :CustomOutput DAILY AVERAGE PRECIP BY_HRU_GROUP
 
-
 ## For Evaporation calcs
 #:CustomOutput DAILY AVERAGE TEMP_AVE BY_HRU_GROUP
 
@@ -131,15 +110,15 @@
 #:CustomOutput DAILY AVERAGE To:ATMOSPHERE BY_HRU
 
 # for local flow calculations (to hydraulic model) 
-:CustomOutput DAILY AVERAGE From:SURFACE_WATER BY_BASIN
-:CustomOutput DAILY AVERAGE To:SURFACE_WATER BY_BASIN
+#:CustomOutput DAILY AVERAGE From:SURFACE_WATER BY_BASIN
+#:CustomOutput DAILY AVERAGE To:SURFACE_WATER BY_BASIN
 
 # for predicting similkameen flow
 #:CustomOutput MONTHLY AVERAGE TEMP_MAX BY_BASIN
 
 #diagnostics
 #:WriteForcingFunctions
-:WriteReservoirMBFile
+#:WriteReservoirMBFile
 #:WriteMassBalanceFile
 #:CustomOutput DAILY AVERAGE PRECIP BY_HRU
 #:CustomOutput DAILY AVERAGE PRECIP BY_BASIN

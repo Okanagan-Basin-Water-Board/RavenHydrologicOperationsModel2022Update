@@ -9,27 +9,14 @@
 #########################################################################
 :FileType rvt via NetCDF Raven 2.9
 # DataType         Raven Timeseries (rvt)
-:Application       R
-:WrittenBy         Joel Trubilowicz
-:CreationDate  2019-02-23 19:47:00
+#:Application       R
+#:WrittenBy         Joel Trubilowicz
+#:CreationDate  2019-02-23 19:47:00
 #---------------------------------------------------------
-
-#aggregated OK-NORD data
-
-#AE provided okanagan only data
-#:RedirectToFile forcings/Okanagan-daily-precipitation-1950-2017-500m.rvt
-#:RedirectToFile forcings/Okanagan-daily-tasmax-1950-2017-500m.rvt
-#:RedirectToFile forcings/Okanagan-daily-tasmin-1950-2017-500m.rvt
-
 #regular grid version (by NHC) of Okanagan Similkameen
 :RedirectToFile forcings/OkanaganSimilkameen_pr.rvt
 :RedirectToFile forcings/OkanaganSimilkameen_tasmax.rvt
 :RedirectToFile forcings/OkanaganSimilkameen_tasmin.rvt
-
-#AE provided okanagan similkameen
-#:RedirectToFile forcings/pr.rvt
-#:RedirectToFile forcings/tasmax.rvt
-#:RedirectToFile forcings/tasmin.rvt
 
 #Observation data:
 :RedirectToFile obs/OsoyoosLake_Stage.rvt
@@ -85,9 +72,9 @@
 #:RedirectToFile reservoirs/Swan_MaxQDelta.rvt
 #:RedirectToFile reservoirs/Swan_MaxQDecrease.rvt
 
-#:RedirectToFile reservoirs/Okanagan_Reservoir_Targets.rvt 
-#:RedirectToFile reservoirs/Okanagan_Reservoir_MinFlow.rvt 
-#:RedirectToFile reservoirs/Okanagan_Reservoir_MaxFlow.rvt 
+:RedirectToFile reservoirs/Okanagan_Reservoir_Targets.rvt 
+:RedirectToFile reservoirs/Okanagan_Reservoir_MinFlow.rvt 
+:RedirectToFile reservoirs/Okanagan_Reservoir_MaxFlow.rvt 
 
 #:RedirectToFile reservoirs/Osoyoos_MinStage.rvt
 #:RedirectToFile reservoirs/Osoyoos_MaxStage.rvt
@@ -101,7 +88,7 @@
 #:RedirectToFile reservoirs/Overrides/override_swalwell.rvt
 #:RedirectToFile reservoirs/Overrides/override_ellison.rvt
 #:RedirectToFile reservoirs/Overrides/override_KalWood.rvt
-:RedirectToFile reservoirs/Overrides/override_okanagan.rvt
+#:RedirectToFile reservoirs/Overrides/override_okanagan.rvt
 #:RedirectToFile reservoirs/Overrides/override_skaha.rvt
 #:RedirectToFile reservoirs/Overrides/override_vaseux.rvt
 

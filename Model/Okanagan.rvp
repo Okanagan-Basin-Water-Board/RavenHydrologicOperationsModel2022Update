@@ -9,13 +9,6 @@
 #-----------------------------------------------------------------
 # Raven Properties file Template. Created by Raven v2.9 w/ netCDF
 #-----------------------------------------------------------------
-# all expressions of format *xxx* need to be specified by the user
-# all parameter values of format ** need to be specified by the user
-# soil, land use, and vegetation classes should be made consistent with user-generated .rvh file
-#-----------------------------------------------------------------
-
-##See Parameter Ranges.xlsx in Model Setup file
-
 
 #-----------------------------------------------------------------
 # Soil Classes
