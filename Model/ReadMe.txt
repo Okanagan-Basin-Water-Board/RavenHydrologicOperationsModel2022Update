@@ -28,6 +28,9 @@ The model can run on historical climate data from 1945-2012 (see climate data) a
 
 #CLIMATE DATA:
 Netcdf files for precipitation, minimum and maximum temperature can be found here:
+https://storage.googleapis.com/obwb_climate_data/RavenHydrologicOperationsModel/ClimateData%20-%20v3.5/pr.nc
+https://storage.googleapis.com/obwb_climate_data/RavenHydrologicOperationsModel/ClimateData%20-%20v3.5/tasmax.nc
+https://storage.googleapis.com/obwb_climate_data/RavenHydrologicOperationsModel/ClimateData%20-%20v3.5/tasmin.nc
 
 #RESOURCES:
 Model Update: 
